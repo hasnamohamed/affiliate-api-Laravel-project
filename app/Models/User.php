@@ -25,7 +25,7 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
-        'users_category_id',
+        'category_id',
         'code',
         'address',
         'city_id',
@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function category()
     {
-        return $this->belongsTo(UsersCategory::class, 'users_category_id');
+        return $this->belongsTo(Category::class, 'users_category_id');
     }
 
     public function city()

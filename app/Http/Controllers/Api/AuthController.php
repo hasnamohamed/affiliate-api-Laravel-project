@@ -31,7 +31,7 @@ class AuthController extends Controller
             'city_id'           => $data['city_id'],
             'address'           => $data['address'],
             'role'              => $data['role'],
-            'users_category_id' => 1,
+            'category_id' => $data['category_id'],
             'is_activated'      => false,
             'code'              => 'USR' . strtoupper(Str::random(6)),
         ]);

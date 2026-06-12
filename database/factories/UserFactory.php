@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\City;
 use App\Models\Governate;
 use App\Models\User;
-use App\Models\UsersCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -43,7 +43,7 @@ class UserFactory extends Factory
 
             'password' => Hash::make('password'),
 
-            'users_category_id' => UsersCategory::inRandomOrder()->value('id'),
+            'category_id' => Category::query()->value('id'),
 
             'code' => strtoupper(fake()->unique()->bothify('USR###??')),
 

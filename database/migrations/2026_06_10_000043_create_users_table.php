@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignId('users_category_id')
-                ->constrained('users_categories')
+            $table->foreignId('category_id')
+                ->constrained('categories')
                 ->cascadeOnDelete();
             $table->string('code')->unique();
             $table->text('address')->nullable();

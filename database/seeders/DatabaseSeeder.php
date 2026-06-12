@@ -10,7 +10,6 @@ use App\Models\Order;
 use App\Models\Rate;
 use App\Models\Detail;
 use App\Models\ProductColor;
-use App\Models\UsersCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -23,12 +22,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Category::factory(20)->create();
         // User::factory(10)->create();
         $this->call([
             GovernateSeeder::class,
             CitySeeder::class,
             ColorSeeder::class,
-            UsersCategorySeeder::class,
             UserSeeder::class,
             PageSeeder::class,
         ]);
@@ -46,7 +45,6 @@ class DatabaseSeeder extends Seeder
         Customer::factory(10)->create();
 
         Order::factory(20)->create();
-        Category::factory(20)->create();
 
 //        User::factory()->create([
 //            'name' => 'Test User',
