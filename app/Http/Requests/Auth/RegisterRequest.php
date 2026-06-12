@@ -35,7 +35,7 @@ class RegisterRequest extends FormRequest
             'city' => 'required|string',
             'address' => 'required|string',
             'role' => 'required|in:admin,user',
-            'category_id' => 'nullable|exists:categories,id',
+            'category_id' => 'nullable',
             'code' => 'nullable|string|max:255',
         ];
     }
