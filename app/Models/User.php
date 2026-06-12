@@ -58,9 +58,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function category()
+    // app/Models/User.php
+
+    public function categories()
     {
-        return $this->belongsTo(Category::class, 'users_category_id');
+        return $this->belongsToMany(Category::class, 'category_user');
     }
 
     public function city()

@@ -36,7 +36,9 @@ class AuthController extends Controller
             'is_activated'      => false,
             'code'              => 'USR' . strtoupper(Str::random(6)),
         ]);
-
+        if (!empty($data['category_ids'])) {
+            $user->categories()->attach($data['category_ids']);
+        }
         return response()->json([
             'message' => 'User registered successfully',
             'user'    => $user,
