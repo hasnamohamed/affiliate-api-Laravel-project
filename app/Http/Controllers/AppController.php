@@ -13,8 +13,7 @@ class AppController extends Controller
         $categories = Category::select('id', 'name')->get();
 
         return response()->json([
-            'status' => true,
-            'data' => $categories,
-        ]);
+            'categories' => $categories,
+        ], 200);
     }
 }

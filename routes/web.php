@@ -17,6 +17,6 @@ Route::prefix('api')->controller(AuthController::class)->group(function () {
     });
 });
 Route::prefix('api')->group(function () {
-
+    Route::get('/categories', [AppController::class, 'getCategories']);
 
 });

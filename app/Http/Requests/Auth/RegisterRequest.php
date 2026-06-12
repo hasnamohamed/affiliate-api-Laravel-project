@@ -23,16 +23,20 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'unique:users,email'],
-            'password' => ['required', 'confirmed', 'min:8'],
-            'phone' => ['required', 'string', 'max:20'],
-            'country' => ['required', 'string'],
-            'governate' => ['required', 'string'],
-            'city' => ['required', 'string'],
-            'address' => ['required', 'string', 'max:1000'],
-            'role' => ['required', 'in:user,moderator'],
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+
+            'password' => 'required|string|min:8|confirmed',
+
+            'phone' => 'required|string',
+            'country' => 'required|string',
+            'governate' => 'required|string',
+            'city' => 'required|string',
+            'address' => 'required|string',
+            'role' => 'required|in:admin,user',
+            'category_id' => 'nullable|exists:categories,id',
+            'code' => 'nullable|string|max:255',
         ];
     }
 }
