@@ -19,13 +19,9 @@ return new class extends Migration
 
             $table->string('whats_number')->nullable();
 
-            $table->foreignId('governate_id')
-                ->constrained()
-                ->cascadeOnDelete();
+            $table->string('governate');
 
-            $table->foreignId('city_id')
-                ->constrained()
-                ->cascadeOnDelete();
+            $table->string('city');
 
             $table->text('address')->nullable();
 

@@ -13,8 +13,8 @@ class Customer extends Model
         'full_name',
         'phone',
         'whats_number',
-        'governate_id',
-        'city_id',
+        'governate',
+        'city',
         'address',
         'mark',
         'page_id',
@@ -23,15 +23,6 @@ class Customer extends Model
         'user_id',
     ];
 
-    public function governate()
-    {
-        return $this->belongsTo(Governate::class);
-    }
-
-    public function city()
-    {
-        return $this->belongsTo(City::class);
-    }
 
     public function page()
     {

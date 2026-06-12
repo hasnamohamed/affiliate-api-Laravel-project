@@ -28,8 +28,9 @@ class RegisterRequest extends FormRequest
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'confirmed', 'min:8'],
             'phone' => ['required', 'string', 'max:20'],
-            'governate_id' => ['required', 'exists:governates,id'],
-            'city_id' => ['required', 'exists:cities,id'],
+            'country' => ['required', 'string'],
+            'governate' => ['required', 'string'],
+            'city' => ['required', 'string'],
             'address' => ['required', 'string', 'max:1000'],
             'role' => ['required', 'in:user,moderator'],
         ];

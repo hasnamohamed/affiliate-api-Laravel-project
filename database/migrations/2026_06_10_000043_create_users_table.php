@@ -29,12 +29,9 @@ return new class extends Migration
                 ->cascadeOnDelete();
             $table->string('code')->unique();
             $table->text('address')->nullable();
-            $table->foreignId('city_id')
-                ->constrained()
-                ->cascadeOnDelete();
-            $table->foreignId('governate_id')
-                ->constrained()
-                ->cascadeOnDelete();
+            $table->string('country');
+            $table->string('city');
+            $table->string('governate');
             $table->string('image')->nullable();
             $table->boolean('is_activated')->default(false);
             $table->rememberToken();

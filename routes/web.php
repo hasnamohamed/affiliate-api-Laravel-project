@@ -18,11 +18,5 @@ Route::prefix('api')->controller(AuthController::class)->group(function () {
 });
 Route::prefix('api')->group(function () {
 
-    Route::get('/governates', [AppController::class, 'getGovernates']);
-
-    Route::get(
-        '/governates/{governateId}/cities',
-        [AppController::class, 'getCitiesByGovernate']
-    );
 
 });

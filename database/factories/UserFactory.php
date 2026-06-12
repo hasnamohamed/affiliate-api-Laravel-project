@@ -3,8 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Category;
-use App\Models\City;
-use App\Models\Governate;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -48,10 +46,11 @@ class UserFactory extends Factory
             'code' => strtoupper(fake()->unique()->bothify('USR###??')),
 
             'address' => fake()->address(),
+            'country' => fake()->country(),
 
-            'city_id' => City::inRandomOrder()->value('id'),
+            'city' => fake()->city(),
 
-            'governate_id' => Governate::inRandomOrder()->value('id'),
+            'governate' => fake()->city() ,
 
             'image' => fake()->imageUrl(),
             'is_activated' => fake()->boolean(),

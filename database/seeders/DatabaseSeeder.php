@@ -25,8 +25,6 @@ class DatabaseSeeder extends Seeder
         Category::factory(20)->create();
         // User::factory(10)->create();
         $this->call([
-            GovernateSeeder::class,
-            CitySeeder::class,
             ColorSeeder::class,
             UserSeeder::class,
             PageSeeder::class,

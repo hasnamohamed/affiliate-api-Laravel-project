@@ -28,8 +28,9 @@ class User extends Authenticatable
         'category_id',
         'code',
         'address',
-        'city_id',
-        'governate_id',
+        'country',
+        'city',
+        'governate',
         'image',
         'is_activated',
     ];

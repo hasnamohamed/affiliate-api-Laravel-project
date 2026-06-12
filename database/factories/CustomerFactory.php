@@ -2,9 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\City;
 use App\Models\Customer;
-use App\Models\Governate;
 use App\Models\Page;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -28,9 +26,9 @@ class CustomerFactory extends Factory
 
             'whats_number' => fake()->phoneNumber(),
 
-            'governate_id' => Governate::inRandomOrder()->value('id'),
+            'governate' => fake()->name(),
 
-            'city_id' => City::inRandomOrder()->value('id'),
+            'city' => fake()->name(),
 
             'address' => fake()->address(),
 
